@@ -1,4 +1,4 @@
-
+/*
 fetch("https://pokeapi.co/api/v2/pokemon/rattata")
 .then(response => response.json().then(data =>{
     console.log(data);
@@ -10,4 +10,4 @@ fetch("https://pokeapi.co/api/v2/pokemon/rattata")
     console.log(err);
     window.alert('Aconteceu algum erro um erro: ' + err.message, 'Procure por outro Pokemon ')
 
-})
+})*/
