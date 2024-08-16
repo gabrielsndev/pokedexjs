@@ -9,7 +9,7 @@
 :root{
     --vermelho: #DC0501;
     --vermelho-medio: #8f0200;
-    --vermelho-escuro: #4B0100;
+    --vermelho-escuro: #4b0100;
     --amarelo: #ffcc00;
     --titulo: font-family: 'Matemasie', Verdana, Tahoma, sans-serif
 }
@@ -31,10 +31,57 @@ header{
 
 #title{
     display: inline-block; 
+    color: var(--amarelo);
+    font-family: 'Matemasie';
     font-size: 2.5em;
+    text-shadow: 5px 5px 2px black;
 }
 
 .icon-title{
-    width: 50px;
-    height: 40px;
+    margin-top:10px;
+    width: 60px;
+    height: 50px;
 }
+
+.search{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#name{
+    width: 350px;
+    height: 40px;
+    border-radius: 10px 0px 0px 10px;
+    background-color: rgba(75, 1, 0, 0.856);
+    color: white;
+    font-size: 1.3em;
+}
+
+::placeholder{
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.button{
+    width: 100px;
+    height: 43px;
+    border-radius: 0px 10px 10px 0px;
+    background-image: linear-gradient(to left, var(--vermelho-escuro), var(--vermelho-medio));
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button:hover{
+    background-image: linear-gradient(to left, var(--vermelho-medio), var(--vermelho-medio));
+    cursor: pointer;
+}
+
+.icon{
+    font-size: 2em;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.863);
+}
+
