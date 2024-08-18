@@ -1,23 +1,28 @@
 
 const URL = "https://pokeapi.co/api/v2/pokemon/"
-fetch(URL + "eevee" )
+fetch(URL + "charmander" )
 .then(response => response.json().then(data =>{
     console.log(data);
     console.log(data.name);
-    console.log(data.sprites['front_default'])
+    console.log(data.sprites.versions["generation-v"]['black-white']['animated'].front_default)
     console.log(data.id);
     fetch(`https://pokeapi.co/api/v2/pokemon-species/${data.id}/`)
     .then(response => response.json().then(evolution => {
         fetch(evolution.evolution_chain["url"])
         .then(response => response.json().then(evolution2 => {
             const processEvolution = (chain) => {
-                console.log(`Pokémon: ${chain.species.name}`);
+                console.log(`Pokémon: ${chain.species.name}`)
                 
                 chain.evolves_to.forEach(nextEvolution => {
-                  console.log(`  Evolui para: ${nextEvolution.species.name}`);
-                  nextEvolution.evolution_details.forEach(detail => {
-                    console.log(`    Método de evolução: ${detail.trigger.name}`);
-                    console.log(`    Nível mínimo: ${detail.min_level}`);
+                    console.log(`  Evolui para: ${nextEvolution.species.name}`)
+                    nextEvolution.evolution_details.forEach(detail => {
+                        console.log(`    Método de evolução: ${detail.trigger.name}`)
+                        console.log(`    Nível mínimo: ${detail.min_level}`)
+                        fetch(URL + nextEvolution.species.name)
+                        .then(response => response.json().then(img =>{
+                            console.log(img.sprites.versions["generation-v"]['black-white']['animated'].front_default)
+                    }))
+                    .catch(err => window. alert(err.message))
                   });
                   
                   // Recursivamente processar evoluções subsequentes
@@ -27,6 +32,7 @@ fetch(URL + "eevee" )
               
               // Inicia a cadeia de evoluções a partir do Pokémon inicial
               processEvolution(evolution2.chain);
+              console.log(evolution2.chain)
         }))
         .catch(err =>{
             console.log(`Error ao buscar a evolução: ${err.message}`);
