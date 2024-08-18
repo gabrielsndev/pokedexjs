@@ -1,6 +1,6 @@
 
 const URL = "https://pokeapi.co/api/v2/pokemon/"
-fetch(URL + "charmander" )
+fetch(URL + "eevee" )
 .then(response => response.json().then(data =>{
     console.log(data);
     console.log(data.name);
