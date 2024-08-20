@@ -99,6 +99,7 @@ header{
     height: 60px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .default{
@@ -122,3 +123,26 @@ header{
     text-align: justify;
 }
 
+footer{
+    background-color: var(--vermelho-escuro);
+    width: 100%;
+    height: 75px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer > p {
+    color: white;
+    display: block;
+    font-size: 1.1em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.863);
+    margin: auto;
+}
+
+footer > p > a{
+    font-weight: bolder;
+    color: white;
+}

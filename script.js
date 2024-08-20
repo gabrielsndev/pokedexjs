@@ -1,11 +1,13 @@
 
 const URL = "https://pokeapi.co/api/v2/pokemon/"
-fetch(URL + "eevee" )
+const def = document.getElementsByClassName("default")[0]
+fetch(URL + "charmander" )
 .then(response => response.json().then(data =>{
     console.log(data);
     console.log(data.name);
-    console.log(data.sprites.versions["generation-v"]['black-white']['animated'].front_default)
+    const gif = data.sprites.versions["generation-v"]['black-white']['animated'].front_default
     console.log(data.id);
+    def.innerHTML =  `<img src="${gif}" alt="${data.name}" width="200" height="200">`
     fetch(`https://pokeapi.co/api/v2/pokemon-species/${data.id}/`)
     .then(response => response.json().then(evolution => {
         fetch(evolution.evolution_chain["url"])
@@ -43,8 +45,6 @@ fetch(URL + "eevee" )
     .catch(err =>{window.alert(`Aconteceu um erro:` + (err).message)});
 
 
-    const main = document.getElementsByClassName("main")[0]
-/*    main.innerHTML =  `<img src="${data['sprites']['front_default']}" alt="${data.name}" width="200" height="200">`*/
 }))
 .catch(err =>{
     console.log(err);
