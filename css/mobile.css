@@ -16,7 +16,6 @@
 
 
 html, body{
-    height: 100%;
     background-image: linear-gradient(to bottom, var(--vermelho), var(--vermelho-medio));
 }
 
@@ -51,7 +50,7 @@ header{
     margin-bottom: 20px;
 }
 
-#name{
+#input{
     width: 350px;
     height: 40px;
     border-radius: 10px 0px 0px 10px;
@@ -91,7 +90,7 @@ header{
     border: 2px solid rgb(255, 255, 255, 0.7);
     border-radius: 10px;
     margin: auto;
-    height: 600px;
+    height: 100%;
     width: 450px;
 }
 
@@ -100,6 +99,12 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+h2{
+    color: white;
+    text-align: center; 
+    margin: 10px 0px 10px 0px;
 }
 
 .default{
@@ -117,17 +122,17 @@ header{
 .text{
     color: white;
     font-size: 1.2em;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    text-align: justify;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 footer{
     background-color: var(--vermelho-escuro);
     width: 100%;
+    position: absolute;
+    top: 2px;
     height: 75px;
-    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -135,11 +140,9 @@ footer{
 
 footer > p {
     color: white;
-    display: block;
     font-size: 1.1em;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.863);
-    margin: auto;
 }
 
 footer > p > a{
