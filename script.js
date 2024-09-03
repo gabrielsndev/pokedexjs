@@ -2,10 +2,13 @@ const URL = "https://pokeapi.co/api/v2/pokemon/"
 const input = document.getElementById('input')
 const search = document.getElementsByClassName('button')[0]
 const main = document.getElementsByClassName('main')[0]
+const footer = document.getElementById('footer')
 
 
 function requisição(){
     main.innerHTML = ''
+    main.style.height = '100%'
+    footer.style.marginTop = '40px'
     const def = document.createElement('div')
     const nome = document.createElement('h2')
     nome.id = 'nome'
