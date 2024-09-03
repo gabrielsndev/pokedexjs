@@ -98,6 +98,18 @@ header{
     align-items: center;
 }
 
+@media (min-width: 370px) {
+    .main{
+        width: 350px;
+    }
+}
+
+@media (min-width: 320px) {
+    .main{
+        width: 300px;
+    }
+}
+
 .tam{
     height: 60px;
     display: flex;
