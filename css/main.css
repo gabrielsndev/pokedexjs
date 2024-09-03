@@ -17,6 +17,7 @@
 
 html, body{
     background-image: linear-gradient(to bottom, var(--vermelho), var(--vermelho-medio));
+    height: 100vh;
 }
 
 header{
@@ -101,6 +102,10 @@ header{
     align-items: center;
 }
 
+main{
+    height: 100%;
+}
+
 h2{
     color: white;
     text-align: center; 
@@ -130,7 +135,6 @@ h2{
 footer{
     background-color: var(--vermelho-escuro);
     width: 100%;
-    position: absolute;
     top: 2px;
     height: 75px;
     display: flex;
