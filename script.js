@@ -2,12 +2,17 @@
 const URL = "https://pokeapi.co/api/v2/pokemon/"
 const input = document.getElementById('input')
 const search = document.getElementsByClassName('button')[0]
-const def = document.getElementsByClassName("default")[0]
-const nome  = document.getElementById('nome')
 const main = document.getElementsByClassName('main')[0]
 
 
 function requisição(){
+    main.innerHTML = ''
+    const def = document.createElement('div')
+    const nome = document.createElement('h2')
+    nome.id = 'nome'
+    def.className = 'default'
+    main.appendChild(nome)
+    main.appendChild(def)
     const valor = input.value
     const valorMin = valor.toLowerCase()
     const nomeCap = valorMin.charAt(0).toUpperCase() + valorMin.slice(1);
@@ -28,27 +33,24 @@ function requisição(){
         const pAltura = document.createElement('p')
         const h2sh = document.createElement('h2')
         const shyni = document.createElement('div')
-        const shynii = document.createElement('div')
 
         /*Dando classes aos elementos*/
         pPEso.className = 'text'
         pAltura.className = 'text'
         shyni.className = 'default'
-        shynii.className = 'default'
 
         /*Adicionando eles ao elmento Pai*/
         main.appendChild(pPEso)
         main.appendChild(pAltura)
         main.appendChild(h2sh)
         main.appendChild(shyni)
-        main.appendChild(shynii)
 
         /*Adicionando efetivamente eles*/
         pAltura.innerText = `Altura do ${nomeCap}: ${data.height}`
         pPEso.innerText = `Peso do ${nomeCap}: ${data.weight}`
         h2sh.innerText = `${nomeCap} Shyni:`
         shyni.innerHTML = `<img src="${data.sprites.versions["generation-v"]['black-white']['animated'].front_shiny}" alt="${data.name}" width="200" height="200">`
-        shynii.innerHTML = `<img src="${data.sprites.versions["generation-v"]['black-white']['animated'].front_shiny}" alt="${data.name}" width="200" height="200">`
+
         
 
 
@@ -62,12 +64,24 @@ function requisição(){
 
                     chain.evolves_to.forEach(nextEvolution => {
                         console.log(`  Evolui para: ${nextEvolution.species.name}`)
+                        const evolution = document.createElement('h2')
+                        const nivel = document.createElement('h2')
+                        const trigger = document.createElement('h2')
+                        const envol = document.createElement('div')
+                        envol.className = 'default'
+                        main.appendChild(evolution)
+                        main.appendChild(nivel)
+                        main.appendChild(trigger)
+                        main.appendChild(envol)
+                        evolution.innerText = `Evolui para: ${nextEvolution.species.name}`
                         nextEvolution.evolution_details.forEach(detail => {
-                            console.log(`    Método de evolução: ${detail.trigger.name}`)
-                            console.log(`    Nível mínimo: ${detail.min_level}`)
+                            nivel.innerText = `Nível mínimo para evolução: ${detail.min_level}`
+                            trigger.innerText = `Gatilho de evolução: ${detail.trigger.name}`
                             fetch(URL + nextEvolution.species.name)
                             .then(response => response.json().then(img =>{
+                                envol.innerHTML = `<img src="${img.sprites.versions["generation-v"]['black-white']['animated'].front_default}" width="200" height="200">`
                                 console.log(img.sprites.versions["generation-v"]['black-white']['animated'].front_default)
+                                const imagem = img.sprites.versions["generation-v"]['black-white']['animated'].front_default
                         }))
                         .catch(err => window. alert(err.message))
                       });
