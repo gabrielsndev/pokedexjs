@@ -23,12 +23,19 @@ Explore a Pokédex online:
 ## 📂 Estrutura do Repositório
 
 pokedexjs/
+
 ├── css/
+
 │ └── style.css # Estilos da aplicação
+
 ├── img/
+
 │ └── pokemon-images/ # Imagens dos Pokémon
+
 ├── index.html # Página principal
+
 ├── script.js # Lógica da aplicação
+
 └── README.md # Este arquivo
 
 
